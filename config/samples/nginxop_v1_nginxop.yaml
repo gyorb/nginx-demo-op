@@ -1,0 +1,12 @@
+apiVersion: nginxop.my.domain/v1
+kind: NginxOp
+metadata:
+  labels:
+    app.kubernetes.io/name: nginxop
+    app.kubernetes.io/instance: nginxop-sample
+    app.kubernetes.io/part-of: demo-op
+    app.kuberentes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: demo-op
+  name: nginxop-sample
+spec:
+  # TODO(user): Add fields here
