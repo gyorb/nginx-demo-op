@@ -28,14 +28,16 @@ type NginxOpSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of NginxOp. Edit nginxop_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Replicas int32  `json:"replicas,omitempty"`
+	Host     string `json:"host,omitempty"`
+	Image    string `json:"image,omitempty"`
 }
 
 // NginxOpStatus defines the observed state of NginxOp
 type NginxOpStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	URL string `json:"url"`
 }
 
 //+kubebuilder:object:root=true

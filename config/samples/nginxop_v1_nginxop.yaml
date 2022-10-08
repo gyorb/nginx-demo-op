@@ -7,6 +7,8 @@ metadata:
     app.kubernetes.io/part-of: demo-op
     app.kuberentes.io/managed-by: kustomize
     app.kubernetes.io/created-by: demo-op
-  name: nginxop-sample
+  name: nginx-op-sample
 spec:
-  # TODO(user): Add fields here
+  replicas: 1
+  host: foo.bar
+  image: "nginx:latest"
