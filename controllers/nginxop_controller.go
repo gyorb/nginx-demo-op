@@ -43,9 +43,9 @@ type NginxOpReconciler struct {
 //+kubebuilder:rbac:groups=nginxop.my.domain,resources=nginxops,verbs=get;list;watch;create;update;patch;delete
 //+kubebuilder:rbac:groups=nginxop.my.domain,resources=nginxops/status,verbs=get;update;patch
 //+kubebuilder:rbac:groups=nginxop.my.domain,resources=nginxops/finalizers,verbs=update
-//+kubebuilder:rbac:groups=apps,resources=deployments,verbs=patch
-//+kubebuilder:rbac:groups="",resources=services,verbs=patch
-//+kubebuilder:rbac:groups=networking.k8s.io,resources=ingresses,verbs=patch
+//+kubebuilder:rbac:groups=apps,resources=deployments,verbs=create;patch
+//+kubebuilder:rbac:groups="",resources=services,verbs=create;patch
+//+kubebuilder:rbac:groups=networking.k8s.io,resources=ingresses,verbs=create;patch
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
