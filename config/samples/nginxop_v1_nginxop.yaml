@@ -10,5 +10,5 @@ metadata:
   name: nginx-op-sample
 spec:
   replicas: 1
-  host: foo.bar
+  host: "foo.bar"
   image: "nginx:latest"
