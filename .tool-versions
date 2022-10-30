@@ -8,4 +8,4 @@ kubebuilder 3.7.0
 kustomize 4.5.7
 operator-sdk 1.23.0
 k9s 0.26.6
-
+helm 3.10

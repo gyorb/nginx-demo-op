@@ -9,6 +9,8 @@ asdf plugin add skaffold
 asdf plugin add golangci-lint
 asdf plugin add trivy
 asdf plugin add kubebuilder
+asdf plugin add k9s
+asdf plugin add helm
 
 asdf install
 ```
