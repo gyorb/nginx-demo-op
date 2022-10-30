@@ -167,3 +167,31 @@ ingress:
   --selector=app.kubernetes.io/component=controller \
   --timeout=90s
 
+.PHONY: cert-manager
+cert-manager:
+	kubectl apply -f ./config/cert-manager/cert-manager.yaml
+
+.PHONY: cert
+cert:
+	kubectl apply -f ./config/cert-manager/selfsigned.yaml
+
+# create crd
+.PHONY: crd
+crd:
+	kubectl create -f config/samples/nginxop_v1_nginxop.yaml
+
+# load image into the kind cluster
+.PHONY: load-image
+load-image: docker-build
+	kind load docker-image ${IMG} --name demo-cluster
+
+# run trivy
+.PHONY: trivy
+trivy:
+	trivy config .
+	trivy image nginxop-controller:latest
+
+# run golangci-lint
+.PHONY: golangci-lint
+golangci-lint:
+	golangci-lint run .
