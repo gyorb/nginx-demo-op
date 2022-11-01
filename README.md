@@ -3,7 +3,7 @@
 
 Use [asdf](https://asdf-vm.com/) to install the required tools.
 
-```
+```sh
 asdf plugin add kind
 asdf plugin add golang
 asdf plugin add kubectl
@@ -21,14 +21,14 @@ asdf install
 
 1. start local Kind cluster
 
-```
+```sh
 make cluster-up
 # use make cluster-down to stop the cluster
 ```
 
 2. install nginx ingress controller, cert-manager and create selfsigned cert
 
-```
+```sh
 make ingress
 
 make cert-manager
@@ -63,19 +63,19 @@ make load-image deploy
 ```
 
 4. Check if the nginx pods are running.
-```
+```sh
 # Get the created nginx pods.
 kubectl get pod --selector=nginx=nginx-op-sample
 ```
 
 5. Edit the example custom resource.
-```
+```sh
 kubectl edit nginxop -n default nginx-op-sample
 ```
 
 4. Verify the connection and the certificates for the nginx pods.
 
-```
+```sh
 # 404 page not found
 curl -k localhost
 
@@ -92,11 +92,11 @@ Kubebuilder was used to initialize the project.
 
 1. init project
 
-```
+```sh
 kubebuilder init --domain my.domain --repo my.domain/nginxop
 ```
 
 2. create api
-```
+```sh
 kubebuilder create api --group nginxop --version v1 --kind NginxOp
 ```
