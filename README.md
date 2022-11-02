@@ -1,4 +1,9 @@
 
+Repository for a simple kubernetes operator which manages
+nginx deployments where `replicas`, `host` and `image` values
+can be configured.
+The cert custom resource (cert-manager) for the configured host needs to be created manually.
+
 # Dev environment setup
 
 Use [asdf](https://asdf-vm.com/) to install the required tools.
